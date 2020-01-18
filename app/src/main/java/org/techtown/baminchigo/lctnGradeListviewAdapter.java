@@ -6,13 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 public class lctnGradeListviewAdapter extends BaseAdapter {
 
     private ArrayList<lctnGradeListview>  lctnGradeListviewList = new ArrayList<>();
 
+    View rootView;
     public lctnGradeListviewAdapter(){
 
     }
@@ -28,10 +28,9 @@ public class lctnGradeListviewAdapter extends BaseAdapter {
         final Context context = parent.getContext();
 
         // "listview_item" Layout을 inflate하여 convertView 참조 획득.
-        if (convertView == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.lctn_grade_listview, parent, false);
-        }
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        convertView = inflater.inflate(R.layout.lctn_grade_listview, parent, false);
+
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
         TextView lctnNmTextView = (TextView) convertView.findViewById(R.id.lctnNm) ;

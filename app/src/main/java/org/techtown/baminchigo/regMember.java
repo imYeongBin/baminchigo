@@ -6,13 +6,14 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class regMember extends AppCompatActivity {
-
+    lctnGradeListviewAdapter adapter;
     private String selectedItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,10 @@ public class regMember extends AppCompatActivity {
         final Context context = this;
 
         ListView listview ;
-        lctnGradeListviewAdapter adapter;
+
+        EditText lotId_input = (EditText) findViewById(R.id.iptName);  // EditText 객체 찾아서
+
+        lotId_input.setPrivateImeOptions("defaultInputmode=korean; ");  // 설정
 
         // Adapter 생성
         adapter = new lctnGradeListviewAdapter() ;
@@ -35,31 +39,31 @@ public class regMember extends AppCompatActivity {
 
         // 첫 번째 아이템 추가.
         adapter.addItem("마곡실내체육관",
-                "선택") ;
+                "타지역") ;
         // 첫 번째 아이템 추가.
         adapter.addItem("계냠체육관",
-                "선택") ;
+                "타지역") ;
         // 첫 번째 아이템 추가.
         adapter.addItem("서운간이체육관",
-                "선택") ;
+                "타지역") ;
         // 첫 번째 아이템 추가.
         adapter.addItem("강서구체육관",
-                "선택") ;
+                "타지역") ;
         // 첫 번째 아이템 추가.
         adapter.addItem("양천구체육관",
-                "선택") ;
+                "타지역") ;
         // 첫 번째 아이템 추가.
         adapter.addItem("신월체육관",
-                "선택") ;
+                "타지역") ;
         // 첫 번째 아이템 추가.
         adapter.addItem("목동구체육관",
-                "선택") ;
+                "타지역") ;
         // 첫 번째 아이템 추가.
         adapter.addItem("부평구체육관",
-                "선택") ;
+                "타지역") ;
         // 첫 번째 아이템 추가.
         adapter.addItem("공항초등학교",
-                "선택") ;
+                "타지역") ;
  
 
 
@@ -74,15 +78,13 @@ public class regMember extends AppCompatActivity {
                 String name = item.getLctnNm() ;
                 String grade = item.getGrade() ;
 
-                Toast.makeText(getApplicationContext(),name+" 111: "+grade,Toast.LENGTH_LONG).show();
-
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                         context);
 
                 // 제목셋팅
                 alertDialogBuilder.setTitle("선택 목록 대화 상자");
 
-                final CharSequence[] items = { "타지역", "지역구민", "인근거주자", "회원" };
+                final CharSequence[] items = { "타지역", "지역구민", "인근거주자", "회원","무료" };
 
                 alertDialogBuilder.setItems(items,
                         new DialogInterface.OnClickListener() {
@@ -90,17 +92,12 @@ public class regMember extends AppCompatActivity {
                                                 int id) {
 
                                 selectedItem = (String)items[id];
-
                                 this.toString();
-
                                 //Toast.makeText(getApplicationContext()," this : "+this,Toast.LENGTH_LONG).show();
-
                                 // 프로그램을 종료한다
-                                Toast.makeText(getApplicationContext(),
-                                        selectedItem + " 선택했습니다.",
-                                        Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                                 item.setGrade(selectedItem);
+                                adapter.notifyDataSetChanged();
                             }
                         });
 
@@ -115,7 +112,7 @@ public class regMember extends AppCompatActivity {
 
         }) ;//end of onClickListener;
 
-        adapter.notifyDataSetChanged();
+
 
     }
 
