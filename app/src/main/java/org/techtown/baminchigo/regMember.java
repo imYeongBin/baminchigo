@@ -36,7 +36,7 @@ public class regMember extends AppCompatActivity {
         // 첫 번째 아이템 추가.
         adapter.addItem("마곡실내체육관",
                 "선택") ;
-        // 첫 번째 아이템 추가.
+        // 첫 번째 아이템 추가. 
         adapter.addItem("계냠체육관",
                 "선택") ;
         // 첫 번째 아이템 추가.
