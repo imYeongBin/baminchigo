@@ -24,10 +24,6 @@ public class regMember extends AppCompatActivity {
 
         ListView listview ;
 
-        EditText lotId_input = (EditText) findViewById(R.id.iptName);  // EditText 객체 찾아서
-
-        lotId_input.setPrivateImeOptions("defaultInputmode=korean; ");  // 설정
-
         // Adapter 생성
         adapter = new lctnGradeListviewAdapter() ;
 

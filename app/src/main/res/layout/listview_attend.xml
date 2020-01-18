@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="2020-01-19"
+        android:id="@+id/attendDt"
+        android:textSize="20dp"
+        android:textColor="#666666"
+        android:gravity="center|left"
+        android:layout_weight="1" />
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="마곡실내체육관"
+        android:id="@+id/place"
+        android:textSize="16dp"
+        android:textColor="#666666"
+        android:gravity="center|left"
+        android:layout_weight="1" />
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:text="26"
+        android:id="@+id/memCount"
+        android:textSize="16dp"
+        android:textColor="#666666"
+        android:gravity="center|right"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="100,000"
+        android:id="@+id/totalFee"
+        android:textSize="24dp"
+        android:textColor="#000000"
+        android:gravity="center|right"
+        android:layout_weight="1" />
+
+</LinearLayout>
