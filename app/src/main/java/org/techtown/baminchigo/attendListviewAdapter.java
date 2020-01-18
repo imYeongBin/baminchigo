@@ -6,20 +6,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 
-public class lctnGradeListviewAdapter extends BaseAdapter {
+public class attendListviewAdapter extends BaseAdapter {
 
-    private ArrayList<lctnGradeListview>  lctnGradeListviewList = new ArrayList<>();
+    private ArrayList<attendListview>  attendListviewList = new ArrayList<>();
 
-    View rootView;
-    public lctnGradeListviewAdapter(){
+
+    public attendListviewAdapter(){
 
     }
 
     @Override
     public int getCount() {
-        return lctnGradeListviewList.size() ;
+
+        return attendListviewList.size();
     }
 
     @Override
@@ -29,20 +31,23 @@ public class lctnGradeListviewAdapter extends BaseAdapter {
 
         // "listview_item" Layout을 inflate하여 convertView 참조 획득.
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(R.layout.listview_lctn_grade, parent, false);
+        convertView = inflater.inflate(R.layout.listview_attend, parent, false);
 
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        TextView lctnNmTextView = (TextView) convertView.findViewById(R.id.lctnNm) ;
-        TextView gradeTextView = (TextView) convertView.findViewById(R.id.grade) ;
-
+        TextView attendDtTextView = (TextView) convertView.findViewById(R.id.attendDt) ;
+        TextView placeTextView = (TextView) convertView.findViewById(R.id.place) ;
+        TextView memCountTextView = (TextView) convertView.findViewById(R.id.memCount) ;
+        TextView totalFeeTextView = (TextView) convertView.findViewById(R.id.totalFee) ;
 
         // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
-        lctnGradeListview listViewItem = lctnGradeListviewList.get(position);
+        attendListview listViewItem = attendListviewList.get(position);
 
         // 아이템 내 각 위젯에 데이터 반영
-        lctnNmTextView.setText(listViewItem.getLctnNm());
-        gradeTextView.setText(listViewItem.getGrade());
+        attendDtTextView.setText(listViewItem.getAttendDt());
+        placeTextView.setText(listViewItem.getPlace());
+        memCountTextView.setText(listViewItem.getMemCount());
+        totalFeeTextView.setText(listViewItem.getTotalFee());
 
         return convertView;
 
@@ -60,17 +65,18 @@ public class lctnGradeListviewAdapter extends BaseAdapter {
     // 지정한 위치(position)에 있는 데이터 리턴 : 필수 구현
     @Override
     public Object getItem(int position) {
-        return lctnGradeListviewList.get(position) ;
+        return attendListviewList.get(position) ;
     }
 
     // 아이템 데이터 추가를 위한 함수. 개발자가 원하는대로 작성 가능.
-    public void addItem(String lctnNm, String grade) {
-        lctnGradeListview item = new lctnGradeListview();
+    public void addItem(String attendDt, String place, String memCount, String totalFee) {
+        attendListview item = new attendListview();
+        item.setAttendDt(attendDt);
+        item.setPlace(place);
+        item.setMemCount(memCount);
+        item.setTotalFee(totalFee);
 
-        item.setLctnNm(lctnNm);
-        item.setGrade(grade);
-
-        lctnGradeListviewList.add(item);
+        attendListviewList.add(item);
     }
 
 }
