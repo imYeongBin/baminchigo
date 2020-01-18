@@ -1,22 +1,25 @@
 package org.techtown.baminchigo;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class regAttendee extends AppCompatActivity {
-
+    attendeeListviewAdapter adapter;
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reg_attendee);
 
         ListView listview ;
-        attendeeListviewAdapter adapter;
+
 
         // Adapter 생성
         adapter = new attendeeListviewAdapter() ;
@@ -26,6 +29,7 @@ public class regAttendee extends AppCompatActivity {
         listview.setAdapter(adapter);
 
         if(adapter.getCount()==0){
+
             Toast.makeText(getApplicationContext(),"등록된 참가자가 없습니다. 참가자를 등록해주세요.",Toast.LENGTH_LONG).show();
 
         }else{
@@ -80,6 +84,12 @@ public class regAttendee extends AppCompatActivity {
     public void onBackClicked (View v){
 
         finish();
+    }
+
+    public void onRegAttendee (View v){
+
+        adapter.addItem("임영빈","타지역","5000","010-4199-3679") ;
+        adapter.notifyDataSetChanged();
     }
 
 }
