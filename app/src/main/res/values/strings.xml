@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyBaminchigo</string>
+    <string name="title_activity_mng_attend">mngAttend</string>
+    <string name="title_activity_mng_etc">mngEtc</string>
+</resources>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="535dp"
+        android:text="둥록하기" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button10"
+        android:layout_alignRight="@+id/button10"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="173dp"
+        android:layout_marginLeft="173dp"
+        android:layout_marginTop="531dp"
+        android:layout_marginEnd="-261dp"
+        android:layout_marginRight="-261dp"
+        android:layout_toEndOf="@+id/button10"
+        android:layout_toRightOf="@+id/button10"
+        android:onClick="onBackClicked"
+        android:text="뒤로가기" />
+
+    <TextView
+        android:id="@+id/phoneNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_toStartOf="@+id/iptName"
+        android:layout_toLeftOf="@+id/iptName"
+        android:text="전화번호" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phoneNo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_toStartOf="@+id/iptName"
+        android:layout_toLeftOf="@+id/iptName"
+        android:text="잔여회비" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_toStartOf="@+id/iptName"
+        android:layout_toLeftOf="@+id/iptName"
+        android:text="이름" />
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/price"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="49dp"
+        android:text="성별" />
+
+    <EditText
+        android:id="@+id/iptName"
+        android:layout_width="251dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:onClick="onClickIptName" />
+
+    <EditText
+        android:id="@+id/iptPhoneNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/iptPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <RadioGroup
+        android:layout_width="152dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="163dp"
+        android:layout_marginLeft="163dp"
+        android:layout_marginTop="237dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="남성" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="여성" />
+    </RadioGroup>
+
+    <ListView
+        android:id="@+id/lctnGradeListview"
+        android:layout_width="wrap_content"
+        android:layout_height="187dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="336dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginBottom="81dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginBottom="273dp"
+        android:text="지역별 등급관리" />
+
+</RelativeLayout>
